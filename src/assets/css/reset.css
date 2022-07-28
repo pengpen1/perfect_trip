@@ -1,0 +1,25 @@
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+img {
+  /* vertical-align 只对行内元素、行内块元素和表格单元格元素生效
+  不能用它垂直对齐块级元素 */
+  vertical-align: top;
+}
