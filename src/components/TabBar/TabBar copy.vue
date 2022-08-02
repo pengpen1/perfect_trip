@@ -6,7 +6,7 @@
           <img
             :src="getAssetURl(data.image)"
             :alt="data.text"
-            v-if="currentIndex !== index"
+            v-if="$route.meta.currentIndex !== index"
           />
           <img :src="getAssetURl(data.imageActive)" :alt="data.text" v-else />
           <span class="tabbar_text">{{ data.text }}</span>
@@ -19,13 +19,7 @@
 <script setup>
 import { tabbarData } from "./config";
 import { getAssetURl } from "@/utils/load_assets";
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
-
-const route = useRoute();
-const currentIndex = computed(() => {
-  return route.meta.currentIndex;
-});
+import { ref } from "vue";
 </script>
 
 <style lang="less" scoped>

@@ -2,5 +2,24 @@ body {
   font-size: 16px;
 }
 :root {
+  /* 自定义变量 */
   --primary-color: #ff9854;
+  --theme-linear-gradient: linear-gradient(90deg, #fa8c1d, #fcaf3f);
+  /* 全局修覆盖vant样式 */
+  --van-search-left-icon-color: var(--primary-color) !important;
+  --van-primary-color: var(--primary-color) !important;
+}
+
+/* 需要隐藏tabbar的页面 */
+.top-page {
+  position: relative;
+  z-index: 9;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  overflow-y: auto;
+}
+
+/* 灰色border线 */
+.bottom-gray-line {
+  border-bottom: 1px solid #f3f3f3;
 }
