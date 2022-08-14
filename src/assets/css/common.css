@@ -8,6 +8,26 @@ body {
   /* 全局修覆盖vant样式 */
   --van-search-left-icon-color: var(--primary-color) !important;
   --van-primary-color: var(--primary-color) !important;
+  --van-danger-color: var(--primary-color) !important;
+  /* dropdown-menu  */
+  --van-dropdown-menu-height: 44px !important;
+  --van-dropdown-menu-title-font-size: 13px !important;
+  --van-dropdown-menu-title-text-color: #333 !important;
+  /* sidebar */
+  --van-sidebar-width: 112px !important;
+  --van-sidebar-font-size: 14px !important;
+  --van-sidebar-text-color: #333 !important;
+  --van-sidebar-selected-text-color: var(--primary-color) !important;
+  --van-sidebar-background-color: #f8f8f8 !important;
+  --van-sidebar-selected-border-width: 4px !important;
+  --van-sidebar-selected-border-height: 4px !important;
+
+  --van-search-input-height: 30px !important;
+  --van-search-padding: 10px !important;
+  --van-search-left-icon-color: var(--primary-color) !important;
+
+  /* tabs */
+  --van-tabs-line-height: 50px !important;
 }
 
 /* 需要隐藏tabbar的页面 */
@@ -22,4 +42,26 @@ body {
 /* 灰色border线 */
 .bottom-gray-line {
   border-bottom: 1px solid #f3f3f3;
+}
+
+/* 字体图标 */
+.icon_check {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(../img/detail/icon_check.png) 0 0 / 100% 100%;
+}
+
+.detail_icon_chat {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(../img/detail/icon_chat.png) 0 0 / 100% 100%;
+}
+
+.detail_icon_order {
+  display: block;
+  width: 14px;
+  height: 17px;
+  background: url(../img/detail/icon_order.png) 0 0 / 100% 100%;
 }

@@ -76,7 +76,7 @@ import router from "../../../../router";
 import { storeToRefs } from "pinia";
 import { useMainStore } from "@/stores/modules/main";
 
-// 获取经纬度
+// 1.获取经纬度
 function positionClick() {
   navigator.geolocation.getCurrentPosition(
     (res) => {
@@ -88,18 +88,18 @@ function positionClick() {
   );
 }
 
-// 点击城市逻辑
+// 2.点击城市逻辑
 function cityClick() {
   router.push("/city");
 }
 
-// 获取用户选择的城市
+// 3.获取用户选择的城市
 const cityStore = useCityStore();
 const currentCity = computed(() => {
   return cityStore.currentCity.cityName;
 });
 
-// 时间逻辑
+// 4.时间逻辑
 const mainStore = useMainStore();
 const show = ref(false);
 const formatter = (day) => {
@@ -119,19 +119,19 @@ const onConfirm = (value) => {
   mainStore.endDate = value[1];
 };
 
-// pinia中拿数据_推荐热门城市
+// 5.pinia中拿数据_推荐热门城市
 const homeStore = useHomeStore();
 const { citySuggest } = storeToRefs(homeStore);
 
-// search按钮相关逻辑
+// 6.search按钮相关逻辑
 const startSearch = () => {
   router.push({
     path: "/search",
     query: {
-      startDate: currentDate.value,
-      endDate: endDate.value,
-      // currentCity: cityStore.currentCity.cityName,相当于在store中取
-      currentCity: currentCity.value.cityName,
+      cityId: cityStore.currentCity.cityId,
+      startDate: mainStore.startDateStr("MM-DD"),
+      endDate: mainStore.endDateStr("MM-DD"),
+      address: cityStore.currentCity.cityName,
     },
   });
 };

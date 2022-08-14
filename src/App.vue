@@ -1,6 +1,10 @@
 <template>
   <div>
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <keep-alive include="home">
+        <component :is="Component" />
+      </keep-alive>
+    </RouterView>
     <Loading />
 
     <!-- 方案一：meta+v-if -->

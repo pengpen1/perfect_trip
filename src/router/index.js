@@ -28,6 +28,7 @@ const router = createRouter({
       component: () => import("@/views/message/Message.vue"),
       meta: {
         currentIndex: 3,
+        hideTabbar: true,
       },
     },
     {

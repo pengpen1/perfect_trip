@@ -17,13 +17,13 @@ const useMainStore = defineStore("main", {
     //   入住时间字符串格式
     startDateStr() {
       return (formatStr = "MM月DD日") => {
-        formatMonthDate(this.startDate, formatStr);
+        return formatMonthDate(this.startDate, formatStr);
       };
     },
     // 离店时间字符串格式
     endDateStr() {
       return (formatStr = "MM月DD日") => {
-        formatMonthDate(this.endDate, formatStr);
+        return formatMonthDate(this.endDate, formatStr);
       };
     },
     // 共入住几天

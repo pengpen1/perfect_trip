@@ -16,6 +16,11 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "home",
+};
+</script>
 <script setup>
 import NavBar from "./cpns/navbar/NavBar.vue";
 import Banner from "./cpns/banner/Banner.vue";
@@ -26,9 +31,8 @@ import SearchBar from "@/components/SearchBar/SearchBar.vue";
 
 import { useHomeStore } from "@/stores/modules/home";
 import { useListenerScroll } from "@/hooks/useListenerScroll";
-import { watch, computed } from "@vue/runtime-core";
+import { watch, computed, onActivated, onDeactivated } from "@vue/runtime-core";
 import { useMainStore } from "@/stores/modules/main";
-import { storeToRefs } from "pinia";
 
 // 1.发生网络请求_热门城市推荐
 const homeStore = useHomeStore();
@@ -62,6 +66,13 @@ const isShowSearch = computed(() => {
 
 // 5.获取mainStore里的时间数据
 const mainStore = useMainStore();
+
+// 6.保存滚动位置
+onActivated(() => {
+  window.scrollTo({
+    top: scrollTop.value,
+  });
+});
 </script>
 
 <style lang="less" scoped>
