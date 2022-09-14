@@ -32,7 +32,7 @@ const useDetailStore = defineStore("detail", {
   actions: {
     async fetchDetailData(houseId) {
       const res = await getDetailData(houseId);
-      this.detailData = res.data;
+      this.detailData = res?.data;
     },
   },
 });

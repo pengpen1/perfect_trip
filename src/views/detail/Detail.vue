@@ -53,6 +53,10 @@ import DetailActionBar from "./cpns/detailActionBar/DetailActionBar.vue";
 import { useListenerScroll } from "@/hooks/useListenerScroll";
 import { computed, ref, watch } from "vue";
 
+// 新加的，解决滚动错乱问题
+window.scrollTo({
+  top: 0,
+});
 const route = useRoute();
 const router = useRouter();
 const detailStore = useDetailStore();
